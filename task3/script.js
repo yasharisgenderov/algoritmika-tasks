@@ -12,7 +12,7 @@ class Message {
 
   getTime() {
     let now = new Date();
-    return `${now.getHours()}:${now.getMinutes()}`;
+    return `${now.getHours()}:${now.getMinutes()<9 ? "0"+ now.getMinutes()  : now.getMinutes() }`;
   }
   toHtml() {
     return `<p class="item">${this.sendTime} ${this.author}: ${this.text}</p><br/>`;
